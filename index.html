@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+<!--    {{msg}}<br>-->
+<!--    {{person.name}}-->
+    <p v-text="msg" @click="onClick"></p>
+    <button  @click="onClick"> 点击</button>
+   <!-- <ul>
+      <li>{{msg}}</li>
+      <li> {{person.name}}</li>
+    </ul>
+    <p v-text="msg" @click="onClick">1</p>
+    <p v-html="htmlStr"></p>-->
+  </div>
+  
+  <script src="myVue.js"></script>
+  <script src="compiler.js"></script>
+  <script src="observe.js"></script>
+  <script src="watcher.js"></script>
+
+  <script>
+    let vm = new MyVue({
+      el:'#app',
+      data:{
+        msg:'123',
+        person:{
+          name:'davion'
+        },
+        htmlStr:'<span>我是htmlStr的span</span>'
+      },
+      methods:{
+        onClick (){
+          this.msg = 2
+        },
+      }
+    })
+  </script>
+</body>
+</html>
